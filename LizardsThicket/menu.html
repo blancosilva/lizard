@@ -1,0 +1,418 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Lizard's Thicket || Menu</title>
+
+    <!-- include JQuery through Google API => Always have the latest version -->
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript"> google.load("jquery", "1.3.2"); </script>
+
+    <!-- import JQTouch -->
+    <script src="jqtouch/jqtouch.min.js" type="application/x-javascript" charset="utf-8"></script>
+	<script src="jqtouch/jqt.photo.js" type="application/x-javascript" charset="utf-8"></script>
+    <!-- Import JQTouch default style (iPhone look). Replace the string "themes/apple" with "themes/jq" for a neutral (black) theme -->
+    <link type="text/css" rel="stylesheet" media="screen" href="jqtouch/jqtouch.css">
+    <link type="text/css" rel="stylesheet" media="screen" href="jqtouch/jqt.photo.css">
+    <link type="text/css" rel="stylesheet" media="screen" href="themes/slck/theme.css">
+
+    <!-- JavaScript goes here -->
+    <script type="text/javascript">
+      // Fire up JQTouch
+      var jQT = $.jQTouch({
+		icon: 'icon.png',
+        addGlossToIcon: false,
+		startupScreen: 'startup.png',
+        statusBar: 'black',
+		preloadImages: [
+					'startup.png',	
+					 'header.png',
+                    '../../themes/slck/img/back_button.png',
+                    '../../themes/slck/img/back_button_clicked.png',
+                    '../../themes/slck/img/button_clicked.png',
+                    '../../themes/slck/img/grayButton.png',
+                    '../../themes/slck/img/whiteButton.png',
+                    '../../themes/slck/img/loading.gif',
+                    ]
+      });
+// Some sample Javascript functions:
+            $(function(){
+                // Show a swipe event on swipe test
+                $('#swipeme').swipe(function(evt, data) {                
+                    $(this).html('You swiped <strong>' + data.direction + '</strong>!');
+                });
+                // Page animation callback events
+                $('#pageevents').
+                    bind('pageAnimationStart', function(e, info){ 
+                        $(this).find('.info').append('Started animating ' + info.direction + '&hellip; ');
+                    }).
+                    bind('pageAnimationEnd', function(e, info){
+                        $(this).find('.info').append(' finished animating ' + info.direction + '.<br /><br />');
+                    });
+                // Page animations end with AJAX callback event, example 1 (load remote HTML only first time)
+                $('#callback').bind('pageAnimationEnd', function(e, info){
+                    if (!$(this).data('loaded')) {                      // Make sure the data hasn't already been loaded (we'll set 'loaded' to true a couple lines further down)
+                        $(this).append($('<div>Loading</div>').         // Append a placeholder in case the remote HTML takes its sweet time making it back
+                            load('startup.png', function() {        // Overwrite the "Loading" placeholder text with the remote HTML
+                                $(this).parent().data('loaded', true);  // Set the 'loaded' var to true so we know not to re-load the HTML next time the #callback div animation ends
+                            }));
+                    }
+                });
+                // Orientation callback event
+                $('body').bind('turn', function(e, data){
+                    $('#orient').html('Orientation: ' + data.orientation);
+                });
+            });
+        </script>
+
+
+    
+  <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22301837-1']);
+  _gaq.push(['_setDomainName', '.lizardsthicket.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    
+    
+
+
+    <style type="text/css" >
+		.toolbar {
+			height: 220px;
+		    background: url(header.png) no-repeat center;
+			text-align: center;
+			
+			
+		}
+		.toolbar > h1 {
+	top: 18px;
+	color: #FFF;
+		}
+		.button, .back, .cancel, .add {
+			top: 15px;
+		}
+		.info {
+			text-align: left;
+			font-size: 14px;
+		}
+		.info h2 {
+			padding: 0;
+			margin: 0;
+			font-size: 16px;
+		}
+    body,td,th {
+	color: #FFF;
+}
+    </style>
+  </head>
+
+<body>
+  <!-- "MENU PAGE" -->
+  <div id="main">
+    <div class="toolbar">
+      <h1></h1>
+    </div>
+ 	<ul id="results_ul" class="rounded">
+	  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+      <li><a href="#breakfast">Breakfast Menu</a></li>
+      <li><a href="#supper">Lunch & Supper Menu</a></li>
+      <li><a href="locations.html" rel="external">Find a Location</a></li>
+    </ul>
+    
+    <br>
+	    <div align="center"><img src="http://www.lizardsthicket.com/images/stories/daily_special_all.png" style="width: 90%">
+    </div>
+
+</div>
+
+  
+    <!-- "Page 2A" - BREAKFAST MENU -->
+  <div id="breakfast">
+    <div class="toolbar">
+    </div>
+    <ul id="results_ul" class="rounded">
+      <li><a href="index.html" rel="external">Return to Homepage</a></li>
+      <li><a href="#">Go Back</a></li>
+      <li><a href="#supper">Lunch & Supper Menu</a></li>
+	  <li><a href="#main">Daily Specials</a></li>
+	  <li><a href="locations.html" rel="external">Find a Location</a></li>     
+	  <li><a href="http://lizardsthicket.com/images/stories/breakfast.pdf" target="_blank">View Menu in PDF</a></li>
+    </ul>
+<center>    
+<img src="menu_breakfast.png">
+<div style="font-size: 1.0em; text-align: center; font: Helvetica, sans-serif ; background-image:url(menu_bg.png); background-repeat:repeat-y; width:300px">
+
+<div style="width: 240px; margin-left: 25px">
+<p class="cat">Good Morning!</p><br>
+<p class="item">Biscuits & Sandwiches</p>
+<p class="desc">Biscuit and Jelly $1.09<br>
+Grilled Biscuit  $1.39<br>
+Egg Biscuit  $1.89<br>
+Bacon Biscuit  $1.99<br>
+Sausage Biscuit  $1.99<br>
+Ham Biscuit  $1.99<br>
+Bacon and Egg Biscuit  $2.49<br>
+Country Ham Biscuit  $2.29<br>
+Egg Sandwich  $1.89<br>
+Bacon and Egg Sandwich $3.99<br>
+BLT on Texas Toast $3.99<br>
+Ham and Egg Sandwich $3.99<br>
+Country Ham Sandwich $3.99<br>
+Grilled Cheese $2.99</p>
+<br>
+<p class="item">Hearty Country Breakfast</p>
+<p class="desc">Two Extra Large Farm Fresh Eggs
+served with either Grits, 
+Hashbrowns, or Country Skillet 
+Apples, Toast or Homemade 
+Biscuit, Butter and Jelly.
+<br><br>
+With your choice of:<br>
+Two Eggs $3.49<br>
+Thick-sliced Bacon $5.49<br>
+Sausage Patties $5.49<br>
+Sausage Links $5.49<br>
+Fried Bologna $5.49<br>
+Breakfast Ham $5.49<br>
+Smoked Sausage $5.49<br>
+Hamburger Patty $5.49<br>
+Salmon Patty $5.49<br>
+Pork Chop (fried or grilled) $5.49</p>
+<br>
+
+
+<p class="item">Junior Breakfast $3.99</p>
+<p class="desc">"One Egg, Two Strips of Bacon or One Sausage Patty or Two links, Grits or Hashbrowns, Toast or Homemade Biscuit, Butter and Jelly</p>
+<br>
+<p class="item">Delicious Omelettes</p>
+<p class="desc">Richly blended Extra Large 
+Farm Fresh Eggs served with
+either Grits, Hashbrowns, or
+Country Skillet Apples, Toast
+or Homemade Biscuit,
+Butter and Jelly
+<br><br>
+Plain $4.79<br>
+Cheese $5.29<br>
+Bacon $5.99<br>
+Sausage $5.99<br>
+Vegetable (bell pepper,<br>
+onions, and tomatoes) $5.99<br>
+Ham $5.99<br>
+Bacon and Cheese $6.49<br>
+Ham and Cheese $6.49<br>
+Sausage and Cheese $6.49<br>
+Western (ham, bell pepper,<br>
+onions, and cheese) $6.99</p>
+
+<br>
+<p class="cat">Southern Gravy Combinations</p>
+<p class="desc">whole order / half order</p><br>
+<p class="item">Homemade Biscuits and White Gravy $3.89 / $2.79<br><br>
+Sausage Gravy on Texas Toast or Homemade Biscuits  $5.79/ $3.79<br><br>
+Creamed Chipped Beef on Texas Toast or Homemade Biscuits $5.79 / $3.79</p>
+<br><br>
+<p class="cat">Hot Off The Griddle</p>
+<p class="desc">Full Order (3) Short Stack (2)</p><br>
+<p class="item">Fluffy Homemade Pancakes<br>
+$4.49 / $3.29<br><br>
+French Toast<br>
+$4.49 / $3.29<br><br>
+Belgian Waffle<br>
+$4.49<br><br>
+Belgian Waffle</p>
+<p class="desc">Topped with Country Skillet Apples $5.79</p><br>
+
+<p class="cat">Authentic Southern Specialties</p><br>
+<P class="item">Steak and Eggs $12.99</P>
+<P class="desc">10 oz. Choice Rib Eye Steak, Cooked to Order with Two Extra Large Farm Fresh Eggs served
+with either Grits, Hashbrowns, or Country Skillet Apples, Toast or 
+Homemade Biscuit,  Butter and Jelly</P>
+<br><br>
+<p class="item">Breakfast Sampler $8.99</p>
+<P class="desc">Half Slice of Country Ham, Two Strips of Bacon, One Sausage Patty or Two Sausage Links,
+Two Extra Large Farm Fresh Eggs served with either Grits, Hashbrowns, or Country
+Skillet Apples, Toast or Homemade Biscuit, Butter and Jelly</P>
+<br><br>
+<p class="item">Country Ham and Eggs $8.29</p>
+<P class="desc">Center Sliced North Carolina Hickory Smoked Country Ham
+with Red-Eye Gravy, Two Extra Large Farm Fresh Eggs
+served with either Grits, Hashbrowns, or Country Skillet
+Apples, Toast or Homemade Biscuit, Butter and Jelly</P>
+<br><br>
+<p class="item">Country Liver Pudding $5.49</p>
+<P class="desc">Country Liver Pudding with Two Extra Large Farm Fresh Eggs served with either Grits,
+Hashbrowns, or Country Skillet Apples, Toast or Homemade Biscuit, Butter and Jelly</P>
+<br><br>
+<p class="item">Fish and Grits $5.49</p>
+<P class="desc">Choice of North Atlantic Flounder Filet or Carolina Catfish, Fried Golden Brown with Two Extra Large Farm Fresh Eggs served with either Grits, Hashbrowns, or Country Skillet Apples, 
+Toast or Homemade Biscuit, Butter and Jelly</P>
+<br><br>
+<p class="item">Corned Beef Hash $5.99</p>
+<P class="desc">A Large Serving of Grilled Corned Beef Hash with Two Extra Large Farm Fresh Eggs 
+served with either Grits, Hashbrowns, or Country Skillet Apples, 
+Toast or Homemade Biscuit, Butter and Jelly</P>
+</div>
+
+
+
+
+</div>
+<img src="menu_bottom.png">
+</center>
+
+
+<a style="margin:0 7px;color:rgba(0,0,0,.9)" href="#" class="whiteButton goback">Back</a></div>
+
+   
+    <!-- "Page 2C" - DINNER MENU -->
+  <div id="supper">
+    <div class="toolbar">
+    </div>
+    <ul id="results_ul" class="rounded">
+      <li><a href="index.html" rel="external">Return to Homepage</a></li>
+      <li><a href="#">Go Back</a></li>
+      <li><a href="#breakfast">Breakfast Menu</a></li>
+	  <li><a href="#main">Daily Specials</a></li>
+	  <li><a href="locations.html" rel="external">Find a Location</a></li>     
+	  <li><a href="http://www.lizardsthicket.com/images/stories/lunch_and_supper.pdf" target="_blank">View Menu in PDF</a></li>
+    </ul>
+    <center>    
+<img src="menu_supper.png">
+<div style="font-size: 1.0em; text-align: center; font: Helvetica, sans-serif ; background-image:url(menu_bg.png); background-repeat:repeat-y; width:300px">
+
+<div style="width: 240px; margin-left: 25px">
+<p class="cat">Today's Special</p><br>
+<p class="item">1 MEAT AND 3 VEGETABLES $6.89</p>
+<p class="desc">Cornbread, Rolls, or Mix
+<br><br>
+Meat and Two $5.89<br>
+Child's Plate $3.99<br>
+Extra serving of meat $2.99</p>
+<br>
+<p class="item">Meats</p>
+<p class="desc">Beef Stew<br>
+Fried Chicken<br>
+Baked Chicken<br>
+Smoked Sausage<br>
+Salmon Patty<br>
+Fried Flounder<br>
+Baked Ham<br>
+Fried Catfish<br>
+Fried Pork Chop<br>
+Country Fried Steak</p><br>
+    
+<p class="item">Vegetables</p>
+<p class="desc">*Cabbage<br>
+*Green Beans<br>
+*Blackeyed Peas<br>
+Fried Okra<br>
+Fried Squash<br>
+*Baby Limas<br>
+*Fresh Collards<br>
+*Okra & Tomatoes<br>
+Rice & Gravy <br>
+Mashed Potatoes & Gravy<br>
+Macaroni & Cheese<br>
+Creamed Corn<br>
+Candied Yams<br>
+Country Skillet Apples<br>
+Cornbread Dressing w/ Giblet<br> 
+Gravy<br>
+Squash Casserole<br>
+Applesauce<br>
+Sliced Peaches<br>
+Alabam' Slaw<br>
+Cole Slaw<br>
+Carrot and Raisin Salad<br>
+Potato Salad<br>
+Pickled Beets<br>
+Sliced Tomatoes<br>
+Jell-O<br>
+<br>
+*Our recipes are traditional Southern country cooking. Many of our vegetables are seasoned with pork and are not
+strictly vegetarian.</p>
+<br>
+
+<p class="cat">Country Dinners</p><br>
+<p class="item">Rib-Eye Steak $12.99</p><p class="desc">10 oz. USDA Choice, grilled the way you like it</p>
+<p class="item">Calabash Shrimp $9.99</p><p class="desc">Calabash Style Shrimp</p>
+<p class="item">Hamburger Steak $8.99</p><p class="desc">12oz. Ground Chuck Smothered with Grilled Onions</p>
+<p class="item">Chicken Strips $8.99</p><p class="desc">Lightly Breaded, served with Honey Mustard</p>
+<p class="item">Country Ham $7.99</p><p class="desc">Center Sliced with Red-Eye Gravy
+<br><br>
+Above includes Salad, French Fries or Cheese Potato, Cornbread, Rolls, or Mix
+(May Substitute 1 Vegetable for Potato or 2 Vegetables for Salad)</p>
+<br>
+<p class="cat">Salads</p><br>
+<p class="item">Salad with Chicken $5.99</p>
+<p class="desc">Fresh Iceberg Lettuce with 
+Large Chicken Breast, (Baked or Fried),
+Carrots, Red Cabbage and Tomato</p><br>
+<p class="item">Chef Salad $7.49</p>
+<p class="desc"> Fresh Iceberg Lettuce with 
+Large Chicken Breast, (Baked or Fried), 
+Diced Ham, Cheddar Cheese, Boiled Egg, 
+Carrots, Red Cabbage and Tomato</p><br>
+
+<p class="item">Tossed Salad $3.49</p>
+<p class="desc">Fresh Iceberg Lettuce, Carrots, 
+Red Cabbage and Tomato<br>
+(may be substituted for 2 Vegetables)</p><br>
+
+<p class="item">Salad Dressings</p>
+<p class="desc">Ranch • Honey Mustard • 1000 Island 
+Blue Cheese • Italian • French • Oil & Vinegar  
+Reduced Calorie Low Fat Ranch</p><br>
+
+<p class="cat">Sandwiches</p><br>
+<p class="desc">Hamburger $3.99<br>
+Bar-B-Que Pork $3.99<br>
+Baked Ham $3.99<br>
+Flounder Filet $3.99<br>
+Chicken Filet $3.99<br>
+Pork Chop (Bone-in or Bone-out) $3.99<br>
+Smoked Sausage (Served on Bun) $3.99<br>
+Fried Bologna (Texas Toast or Bun) $3.99<br>
+BLT on Texas Toast $3.99<br>
+Grilled Cheese on Texas Toast $2.99<br>
+Add Cheese $0.39</p><br>
+
+<p class="cat">Side Orders</p><br>
+<p class="desc">Vegetable $1.49<br>
+French Fries $1.49<br>
+Cheese Potato $2.29<br>
+Daily Meats $2.99<br>
+Extra Salad Dressing $0.79<br>
+Cornbread, Rolls or Mix(2) $0.50</p><br>
+
+<p class="cat">Soups & Chili</p><br>
+<p class="desc">Vegetable Soup with Beef $3.99<br>
+Chicken and Rice Soup $3.99<br>
+Spicy Blackeye Pea Soup (Seasonal) $3.99<br>
+Chili and Beans (Seasonal) $3.99<br><br>
+Above Served with Cornbread, Rolls, or Saltines</p><br>
+    
+</div>
+<img src="menu_bottom.png">
+</center>
+<a style="margin:0 7px;color:rgba(0,0,0,.9)" href="#" class="whiteButton goback">Back</a></div>
+
+
+
+ 
+
+
+</div>
+
+</body>
+</html>

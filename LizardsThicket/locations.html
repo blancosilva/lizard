@@ -1,0 +1,639 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Lizard's Thicket Locations</title>
+
+    <!-- include JQuery through Google API => Always have the latest version -->
+    <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript"> google.load("jquery", "1.3.2"); </script>
+    <script src="jqtouch/jqt.location.js" type="application/x-javascript" charset="utf-8"> </script>
+
+    <!-- import JQTouch -->
+    <script src="jqtouch/jqtouch.min.js" type="application/x-javascript" charset="utf-8"></script>
+    <!-- Import JQTouch default style (iPhone look). Replace the string "themes/apple" with "themes/jq" for a neutral (black) theme -->
+    <link type="text/css" rel="stylesheet" media="screen" href="jqtouch/jqtouch.css">
+    <link type="text/css" rel="stylesheet" media="screen" href="themes/slck/theme.css">
+
+    <!-- JavaScript goes here -->
+    <script type="text/javascript">
+      // Fire up JQTouch
+      var jQT = $.jQTouch({
+		icon: 'icon.png',
+        addGlossToIcon: false,
+		startupScreen: 'startup.png',
+        statusBar: 'black',
+		preloadImages: [
+					'startup.png',	
+					 'header.png',
+                    '../../themes/slck/img/back_button.png',
+                    '../../themes/slck/img/back_button_clicked.png',
+                    '../../themes/slck/img/button_clicked.png',
+                    '../../themes/slck/img/grayButton.png',
+                    '../../themes/slck/img/whiteButton.png',
+                    '../../themes/slck/img/loading.gif',
+                    ]
+      });
+// Some sample Javascript functions:
+            $(function(){
+                // Show a swipe event on swipe test
+                $('#swipeme').swipe(function(evt, data) {                
+                    $(this).html('You swiped <strong>' + data.direction + '</strong>!');
+                });
+                // Page animation callback events
+                $('#pageevents').
+                    bind('pageAnimationStart', function(e, info){ 
+                        $(this).find('.info').append('Started animating ' + info.direction + '&hellip; ');
+                    }).
+                    bind('pageAnimationEnd', function(e, info){
+                        $(this).find('.info').append(' finished animating ' + info.direction + '.<br /><br />');
+                    });
+                // Page animations end with AJAX callback event, example 1 (load remote HTML only first time)
+                $('#callback').bind('pageAnimationEnd', function(e, info){
+                    if (!$(this).data('loaded')) {                      // Make sure the data hasn't already been loaded (we'll set 'loaded' to true a couple lines further down)
+                        $(this).append($('<div>Loading</div>').         // Append a placeholder in case the remote HTML takes its sweet time making it back
+                            load('startup.png', function() {        // Overwrite the "Loading" placeholder text with the remote HTML
+                                $(this).parent().data('loaded', true);  // Set the 'loaded' var to true so we know not to re-load the HTML next time the #callback div animation ends
+                            }));
+                    }
+                });
+                // Orientation callback event
+                $('body').bind('turn', function(e, data){
+                    $('#orient').html('Orientation: ' + data.orientation);
+                });
+            });
+        </script>
+
+
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22301837-1']);
+  _gaq.push(['_setDomainName', '.lizardsthicket.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  
+    
+
+
+    <style type="text/css" >
+		.toolbar {
+			height: 220px;
+		    background: url(header.png) no-repeat center;
+			text-align: center;
+			
+			
+		}
+		.toolbar > h1 {
+	top: 18px;
+	color: #FFF;
+	text-shadow: rgba(0,0,0,1) 0 0px 0px;
+		}
+		.button, .back, .cancel, .add {
+			top: 15px;
+		}
+		.info {
+			text-align: left;
+			font-size: 14px;
+		}
+		.info h2 {
+			padding: 0;
+			margin: 0;
+			font-size: 16px;
+		}
+    body,td,th {
+	color: #FFF;
+}
+    </style>
+  </head>
+
+<body>
+  <!-- "HOME PAGE" -->
+  <div id="main">
+  <div class="toolbar">
+  <h1></h1>
+  </div> 
+  <div style="font-size: 10px; text-align: center; margin: 10px 10px 0px 10px; font: Arial, Helvetica, sans-serif" class="content">
+  Please scroll down to select a location.
+  </div>
+  <ul id="results_ul" class="rounded">
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  <li><a href="menu.html" rel="external" >Food & Menu</a></li>
+  <li><a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&q=Lizard's+Thicket&aq=&sll=33.966712,-81.01387&sspn=0.441914,0.617294&ie=UTF8&filter=0&rq=1&ev=zo&split=1&radius=21.22&hq=Lizard's+Thicket&hnear=&ll=33.991765,-81.038589&spn=0.441784,0.617294&z=11" target="_blank" >Show Locations on Map</a></li>
+  </ul>
+
+  <ul class="edgetoedge">
+  <br>
+  <li><p class="cat" align="center">Blythewood</p></li>
+  <li><a href="#loc_01"><img src="locations/loc_01.jpg" class="location" align="left">
+  711-1 University Village<br>
+  Blythewood, SC 29016<br>
+  (803) 451-8400</a></li>
+
+  <li><p class="cat" align="center">Cayce</p></li>
+  <li><a href="#loc_09"><img src="locations/loc_09.jpg" class="location" align="left" >
+  501 Knox Abbott Dr<br>
+  Cayce, SC 29033<br>
+  (803) 791-0314</a></li>
+
+  <li><p class="cat" align="center">Columbia</p></li>
+  <li><a href="#loc_02"><img src="locations/loc_02.jpg" class="location" align="left" >
+  10170 Two Notch Road<br>
+  Columbia, SC 29229<br>
+  (803) 419-5662</a></li>
+
+  <li><a href="#loc_03"><img src="locations/loc_03.jpg" class="location" align="left" >
+  7620 Two Notch Road<br>
+  Columbia, SC 29223<br>
+  (803) 788-3088</a></li>
+
+  <li><a href="#loc_04"><img src="locations/loc_04.jpg" class="location" align="left" >
+  3147 Forest Drive<br>
+  Columbia, SC 29204<br>
+  (803) 787-8781</a></li>
+
+  <li><a href="#loc_05"><img src="locations/loc_05.jpg" class="location" align="left" >
+  818 Elmwood Avenue<br>
+  Columbia, SC 29201<br>
+  (803) 779-6407</a></li>
+
+  <li><a href="#loc_06"><img src="locations/loc_06.jpg" class="location" align="left" >
+  7938 Garners Ferry Road<br>
+  Columbia, SC 29209<br>
+  (803) 647-0095</a></li>
+
+  <li><a href="#loc_07"><img src="locations/loc_07.jpg" class="location" align="left" >
+  402 Beltine Blvd<br>
+  Columbia, SC 29205 <br>
+  (803) 738-0006</a></li>
+
+  <li><a href="#loc_11"><img src="locations/loc_11.jpg" class="location" align="left" >
+  1824 Broad River Rd<br>
+  Columbia, SC 29210 <br>
+  (803) 798-6427</a></li>
+
+  <li><p class="cat" align="center">Irmo</p></li>
+
+  <li><a href="#loc_12"><img src="locations/loc_12.jpg" class="location" align="left" >
+  7569 St. Andrews Rd<br>
+  Irmo, SC 29063<br>
+  (803) 732-1225</a></li>
+
+  <li><p class="cat" align="center">Lexington</p></li>
+
+  <li><a href="#loc_13"><img src="locations/loc_13.jpg" class="location" align="left" >
+  621 West Main St<br>
+  Lexington, SC 29072<br>
+  (803) 951-3555</a></li>
+
+  <li><a href="#loc_14"><img src="locations/loc_14.jpg" class="location" align="left" >
+  4616 Augusta Rd<br>
+  Lexington, SC 29073<br>
+  (803) 785-5560</a></li>
+
+  <li><p class="cat" align="center">West Columbia</p></li>
+
+  <li><a href="#loc_08"><img src="locations/loc_08.jpg" class="location" align="left" >
+  2240 Airport Blvd<br>
+  West Columbia, SC 29170 <br>
+  (803) 796-7820</a></li>
+
+  <li><a href="#loc_10"><img src="locations/loc_10.jpg" class="location" align="left" >
+  2234 Sunset Blvd<br>
+  West Columbia, SC 29169<br>
+  (803) 794-0923</a></li>
+
+  <li><p class="cat" align="center">Corporate Office</p></li>
+
+  <li><a href="#loc_corp"><img src="locations/loc_corp.jpg" class="location" align="left" >
+  1036 Market St<br>
+  Columbia, SC 29201<br>
+  (803) 799-5016</a></li>
+
+  </ul>
+  </div>
+
+
+
+
+  <!-- "LOC_01" -->    
+  <div id="loc_01">
+  <div class="toolbar">
+  <h1></h1>
+  </div>
+  <center>
+
+  <div style="font-size: medium; margin: 20px 10px 20px 10px; font: Helvetica, sans-serif; font-color: #722b11; width: 90%; max-width: 600px;" class="content">
+  <b>Lizard's Thicket</b><br>
+  711-1 University Village Drive<br>
+  Blythewood, SC 29016<br>
+  Phone: (803) 451-8400<br>
+  </div>
+
+  <img src="locations/loc_01.jpg" class="loc_photo" >
+  <br>
+
+  <ul id="results_ul" class="rounded">
+  <li><a href="tel:8034518400" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contact', 'Phone' ])">Call This Location</a></li>
+  <li><a href="http://maps.google.com/maps?um=1&cid=0,0,14969182886489565332" target="_blank">Show This Location on Map</a></li>
+  <li><a href="#main" rel="external">Back to All Locations</a></li>
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  </ul>
+
+  </center></div>
+
+
+  <!-- "LOC_02" -->    
+  <div id="loc_02">
+  <div class="toolbar">
+  <h1></h1>
+  </div>
+  <center>
+
+  <div style="font-size: medium; margin: 20px 10px 20px 10px; font: Helvetica, sans-serif; font-color: #722b11; width: 90%; max-width: 600px;" class="content">
+  <b>Lizard's Thicket</b><br>
+  10170 Two Notch Road<br>
+  Columbia, SC 29229<br>
+  Phone: (803) 419-5662<br>
+  </div>
+
+  <img src="locations/loc_02.jpg" class="loc_photo" >
+  <br>
+
+  <div style="max-width: 600px; text-align:left; ">
+  <ul id="results_ul" class="rounded">
+  <li><a href="tel:8034195662" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contact', 'Phone' ])">Call This Location</a></li>
+  <li><a href="http://maps.google.com/maps?um=1&cid=0,0,13350094536461950338" target="_blank">Show This Location on Map</a></li>
+  <li><a href="#main" rel="external">Back to All Locations</a></li>
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  </ul></div>
+
+  </center></div>
+
+
+  <!-- "LOC_03" -->    
+  <div id="loc_03">
+  <div class="toolbar">
+  <h1></h1>
+  </div>
+  <center>
+
+  <div style="font-size: medium; margin: 20px 10px 20px 10px; font: Helvetica, sans-serif; font-color: #722b11; width: 90%; max-width: 600px;" class="content">
+  <b>Lizard's Thicket</b><br>
+  7620 Two Notch Road<br>
+  Columbia, SC 29223<br>
+  Phone: (803) 788-3088<br>
+  </div>
+
+  <img src="locations/loc_03.jpg" class="loc_photo" >
+  <br>
+
+  <div style="max-width: 600px; text-align:left; ">
+  <ul id="results_ul" class="rounded">
+  <li><a href="tel:8037883088" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contact', 'Phone' ])">Call This Location</a></li>
+  <li><a href="http://maps.google.com/maps?um=1&cid=0,0,6480608324962004830" target="_blank">Show This Location on Map</a></li>
+  <li><a href="#main" rel="external">Back to All Locations</a></li>
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  </ul></div>
+
+  </center></div>
+
+
+  <!-- "LOC_04" -->    
+  <div id="loc_04">
+  <div class="toolbar">
+  <h1></h1>
+  </div>
+  <center>
+
+  <div style="font-size: medium; margin: 20px 10px 20px 10px; font: Helvetica, sans-serif; font-color: #722b11; width: 90%; max-width: 600px;" class="content">
+  <b>Lizard's Thicket</b><br>
+  3147 Forest Drive<br>
+  Columbia, SC 29204<br>
+  Phone: (803) 787-8781<br>
+  </div>
+
+  <img src="locations/loc_04.jpg" class="loc_photo" >
+  <br>
+
+  <div style="max-width: 600px; text-align:left; ">
+  <ul id="results_ul" class="rounded">
+  <li><a href="tel:8037878781" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contact', 'Phone' ])">Call This Location</a></li>
+  <li><a href="http://maps.google.com/maps?um=1&cid=0,0,8619483354325237694" target="_blank">Show This Location on Map</a></li>
+  <li><a href="#main" rel="external">Back to All Locations</a></li>
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  </ul></div>
+
+  </center></div>
+
+
+  <!-- "LOC_05" -->    
+  <div id="loc_05">
+  <div class="toolbar">
+  <h1></h1>
+  </div>
+  <center>
+
+  <div style="font-size: medium; margin: 20px 10px 20px 10px; font: Helvetica, sans-serif; font-color: #722b11; width: 90%; max-width: 600px;" class="content">
+  <b>Lizard's Thicket</b><br>
+  818 Elmwood Avenue<br>
+  Columbia, SC 29201<br>
+  Phone: (803) 779-6407<br>
+  </div>
+
+  <img src="locations/loc_05.jpg" class="loc_photo" >
+  <br>
+
+  <div style="max-width: 600px; text-align:left; ">
+  <ul id="results_ul" class="rounded">
+  <li><a href="tel:8037996407" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contact', 'Phone' ])">Call This Location</a></li>
+  <li><a href="http://maps.google.com/maps?um=1&cid=0,0,8638698370159630580" target="_blank">Show This Location on Map</a></li>
+  <li><a href="#main" rel="external">Back to All Locations</a></li>
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  </ul></div>
+
+  </center></div>
+
+
+  <!-- "LOC_06" -->    
+  <div id="loc_06">
+  <div class="toolbar">
+  <h1></h1>
+  </div>
+  <center>
+
+  <div style="font-size: medium; margin: 20px 10px 20px 10px; font: Helvetica, sans-serif; font-color: #722b11; width: 90%; max-width: 600px;" class="content">
+  <b>Lizard's Thicket</b><br>
+  7938 Garners Ferry Road<br>
+  Columbia, SC 29209<br>
+  Phone: (803) 647-0095<br>
+  </div>
+
+  <img src="locations/loc_06.jpg" class="loc_photo" >
+  <br>
+
+  <div style="max-width: 600px; text-align:left; ">
+  <ul id="results_ul" class="rounded">
+  <li><a href="tel:8036470095" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contact', 'Phone' ])">Call This Location</a></li>
+  <li><a href="http://maps.google.com/maps?um=1&cid=0,0,14030831167055864491" target="_blank">Show This Location on Map</a></li>
+  <li><a href="#main" rel="external">Back to All Locations</a></li>
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  </ul></div>
+
+  </center></div>
+
+
+  <!-- "LOC_07" -->    
+  <div id="loc_07">
+  <div class="toolbar">
+  <h1></h1>
+  </div>
+  <center>
+
+  <div style="font-size: medium; margin: 20px 10px 20px 10px; font: Helvetica, sans-serif; font-color: #722b11; width: 90%; max-width: 600px;" class="content">
+  <b>Lizard's Thicket</b><br>
+  402 Beltine Blvd<br>
+  Columbia, SC 29205 <br>
+  Phone: (803) 738-0006<br>
+  </div>
+
+  <img src="locations/loc_07.jpg" class="loc_photo" >
+  <br>
+
+  <div style="max-width: 600px; text-align:left; ">
+  <ul id="results_ul" class="rounded">
+  <li><a href="tel:8037380006" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contact', 'Phone' ])">Call This Location</a></li>
+  <li><a href="http://maps.google.com/maps?um=1&cid=0,0,14443001728511852570" target="_blank">Show This Location on Map</a></li>
+  <li><a href="#main" rel="external">Back to All Locations</a></li>
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  </ul></div>
+
+  </center></div>
+
+  <!-- "LOC_08" -->    
+  <div id="loc_08">
+  <div class="toolbar">
+  <h1></h1>
+  </div>
+  <center>
+
+  <div style="font-size: medium; margin: 20px 10px 20px 10px; font: Helvetica, sans-serif; font-color: #722b11; width: 90%; max-width: 600px;" class="content">
+  <b>Lizard's Thicket</b><br>
+  2240 Airport Blvd<br>
+  West Columbia, SC 29170 <br>
+  Phone: (803) 796-7820<br>
+  </div>
+
+  <img src="locations/loc_08.jpg" class="loc_photo" >
+  <br>
+
+  <div style="max-width: 600px; text-align:left; ">
+  <ul id="results_ul" class="rounded">
+  <li><a href="tel:8037967820" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contact', 'Phone' ])">Call This Location</a></li>
+  <li><a href="http://maps.google.com/maps?um=1&cid=0,0,18346875639647957267" target="_blank">Show This Location on Map</a></li>
+  <li><a href="#main" rel="external">Back to All Locations</a></li>
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  </ul></div>
+
+  </center></div>
+
+  <!-- "LOC_09" -->    
+  <div id="loc_09">
+  <div class="toolbar">
+  <h1></h1>
+  </div>
+  <center>
+
+  <div style="font-size: medium; margin: 20px 10px 20px 10px; font: Helvetica, sans-serif; font-color: #722b11; width: 90%; max-width: 600px;" class="content">
+  <b>Lizard's Thicket</b><br>
+  501 Knox Abbott Dr<br>
+  Cayce, SC 29033<br>
+  Phone: (803) 791-0314<br>
+  </div>
+
+  <img src="locations/loc_09.jpg" class="loc_photo" >
+  <br>
+
+  <div style="max-width: 600px; text-align:left; ">
+  <ul id="results_ul" class="rounded">
+  <li><a href="tel:8037910314" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contact', 'Phone' ])">Call This Location</a></li>
+  <li><a href="http://maps.google.com/maps?um=1&cid=0,0,13399740129147451902" target="_blank">Show This Location on Map</a></li>
+  <li><a href="#main" rel="external">Back to All Locations</a></li>
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  </ul></div>
+
+  </center></div>
+
+  <!-- "LOC_10" -->    
+  <div id="loc_10">
+  <div class="toolbar">
+  <h1></h1>
+  </div>
+  <center>
+
+  <div style="font-size: medium; margin: 20px 10px 20px 10px; font: Helvetica, sans-serif; font-color: #722b11; width: 90%; max-width: 600px;" class="content">
+  <b>Lizard's Thicket</b><br>
+  2234 Sunset Blvd<br>
+  West Columbia, SC 29169<br>
+  Phone: (803) 794-0923<br>
+  </div>
+
+  <img src="locations/loc_10.jpg" class="loc_photo" >
+  <br>
+
+  <div style="max-width: 600px; text-align:left; ">
+  <ul id="results_ul" class="rounded">
+  <li><a href="tel:8037940923" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contact', 'Phone' ])">Call This Location</a></li>
+  <li><a href="http://maps.google.com/maps?um=1&cid=0,0,10741111811498136754" target="_blank">Show This Location on Map</a></li>
+  <li><a href="#main" rel="external">Back to All Locations</a></li>
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  </ul></div>
+
+  </center></div>
+
+  <!-- "LOC_11" -->    
+  <div id="loc_11">
+  <div class="toolbar">
+  <h1></h1>
+  </div>
+  <center>
+
+  <div style="font-size: medium; margin: 20px 10px 20px 10px; font: Helvetica, sans-serif; font-color: #722b11; width: 90%; max-width: 600px;" class="content">
+  <b>Lizard's Thicket</b><br>
+  1824 Broad River Rd<br>
+  Columbia, SC 29210 <br>
+  Phone: (803) 798-6427<br>
+  </div>
+
+  <img src="locations/loc_11.jpg" class="loc_photo" >
+  <br>
+
+  <div style="max-width: 600px; text-align:left; ">
+  <ul id="results_ul" class="rounded">
+  <li><a href="tel:8037986427" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contact', 'Phone' ])">Call This Location</a></li>
+  <li><a href="http://maps.google.com/maps?um=1&cid=0,0,14950097171645586110" target="_blank" >Show This Location on Map</a></li>
+  <li><a href="#main" rel="external">Back to All Locations</a></li>
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  </ul></div>
+
+  </center></div>
+
+  <!-- "LOC_12" -->    
+  <div id="loc_12">
+  <div class="toolbar">
+  <h1></h1>
+  </div>
+  <center>
+
+  <div style="font-size: medium; margin: 20px 10px 20px 10px; font: Helvetica, sans-serif; font-color: #722b11; width: 90%; max-width: 600px;" class="content">
+  <b>Lizard's Thicket</b><br>
+  7569 St. Andrews Rd<br>
+  Irmo, SC 29063<br>
+  Phone: (803) 732-1225<br>
+  </div>
+
+  <img src="locations/loc_12.jpg" class="loc_photo" >
+  <br>
+
+  <div style="max-width: 600px; text-align:left; ">
+  <ul id="results_ul" class="rounded">
+  <li><a href="tel:8037321225" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contact', 'Phone' ])">Call This Location</a></li>
+  <li><a href="http://maps.google.com/maps?um=1&cid=0,0,2376867931911982936" target="_blank">Show This Location on Map</a></li>
+  <li><a href="#main" rel="external">Back to All Locations</a></li>
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  </ul></div>
+
+  </center></div>
+
+  <!-- "LOC_13" -->    
+  <div id="loc_13">
+  <div class="toolbar">
+  <h1></h1>
+  </div>
+  <center>
+
+  <div style="font-size: medium; margin: 20px 10px 20px 10px; font: Helvetica, sans-serif; font-color: #722b11; width: 90%; max-width: 600px;" class="content">
+  <b>Lizard's Thicket</b><br>
+  621 West Main St<br>
+  Lexington, SC 29072<br>
+  Phone: (803) 951-3555<br>
+  </div>
+
+  <img src="locations/loc_13.jpg" class="loc_photo" >
+  <br>
+
+  <div style="max-width: 600px; text-align:left; ">
+  <ul id="results_ul" class="rounded">
+  <li><a href="tel:8039513555" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contact', 'Phone' ])">Call This Location</a></li>
+  <li><a href="http://maps.google.com/maps?um=1&cid=0,0,10125319629864414012" target="_blank">Show This Location on Map</a></li>
+  <li><a href="#main" rel="external">Back to All Locations</a></li>
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  </ul></div>
+
+  </center></div>
+
+  <!-- "LOC_14" -->    
+  <div id="loc_14">
+  <div class="toolbar">
+  <h1></h1>
+  </div>
+  <center>
+
+  <div style="font-size: medium; margin: 20px 10px 20px 10px; font: Helvetica, sans-serif; font-color: #722b11; width: 90%; max-width: 600px;" class="content">
+  <b>Lizard's Thicket</b><br>
+  4616 Augusta Rd<br>
+  Lexington, SC 29073<br>
+  Phone: (803) 785-5560<br>
+  </div>
+
+  <img src="locations/loc_14.jpg" class="loc_photo" >
+  <br>
+
+  <div style="max-width: 600px; text-align:left; ">
+  <ul id="results_ul" class="rounded">
+  <li><a href="tel:8037855560" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contact', 'Phone' ])">Call This Location</a></li>
+  <li><a href="http://maps.google.com/maps?um=1&cid=0,0,2225372770383406547" target="_blank">Show This Location on Map</a></li>
+  <li><a href="#main" rel="external">Back to All Locations</a></li>
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  </ul></div>
+
+  </center></div>
+
+  <!-- "LOC_corp" -->    
+  <div id="loc_corp">
+  <div class="toolbar">
+  <h1></h1>
+  </div>
+  <center>
+
+  <div style="font-size: medium; margin: 20px 10px 20px 10px; font: Helvetica, sans-serif; font-color: #722b11; width: 90%; max-width: 600px;" class="content">
+  <b>Lizard's Thicket</b><br>
+  1036 Market St<br>
+  Columbia, SC 29201<br>
+  Phone: (803) 799-5016<br>
+  </div>
+
+  <img src="locations/loc_corp.jpg" class="loc_photo" >
+  <br>
+
+  <div style="max-width: 600px; text-align:left; ">
+  <ul id="results_ul" class="rounded">
+  <li><a href="tel:8037995016" target="_blank" onClick="_gaq.push(['_trackEvent', 'Contact', 'Phone' ])">Call This Location</a></li>
+  <li><a href="http://maps.google.com/maps?um=1&cid=0,0,14615516671020362084" target="_blank"">Show This Location on Map</a></li>
+  <li><a href="#main" rel="external">Back to All Locations</a></li>
+  <li><a href="index.html" rel="external">Return to Homepage</a></li>
+  </ul></div>
+
+  </center></div>
+
+
+
+  </div></body>
+  </html>
